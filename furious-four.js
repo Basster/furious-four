@@ -2,10 +2,10 @@ angular.module('ffApp', [])
     .controller('FuriousFourController', function ($scope) {
 
         $scope.values = {
-            quality: "4",
-            scope: "3",
-            time: "2",
-            budget: "1"
+            time: "4",
+            budget: "3",
+            quality: "2",
+            scope: "1"
         };
 
         var inWatch = false;
