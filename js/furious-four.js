@@ -1,16 +1,21 @@
-angular.module('ffApp', [])
-    .controller('FuriousFourController', function ($scope) {
+(function () {
+    "use strict";
 
-        $scope.values = {
+    var module = angular.module('ffApp', []);
+
+    module.controller('FuriousFourController', ['$scope', function ($scope) {
+
+        var vm = this;
+        var inWatch = false;
+
+        vm.values = {
             quality: "4",
             scope: "3",
             time: "2",
             budget: "1"
         };
 
-        var inWatch = false;
-
-        $scope.$watch('values', function (newVal, oldVal) {
+        var watcher = function (newVal, oldVal) {
             var changedProperty, replaceProperty = null;
 
             for (var prop in oldVal) {
@@ -32,10 +37,17 @@ angular.module('ffApp', [])
 
             if (changedProperty && inWatch === false) {
                 inWatch = true;
-                $scope.values[replaceProperty] = oldNum;
+                vm.values[replaceProperty] = oldNum;
             }
             else {
                 inWatch = false;
             }
-        }, true);
-    });
+        };
+
+        var watchValues = function () {
+            return vm.values;
+        };
+
+        $scope.$watch(watchValues, watcher, true);
+    }]);
+})();

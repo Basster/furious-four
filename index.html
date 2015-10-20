@@ -1,27 +1,27 @@
 <!doctype html>
 <html ng-app="ffApp">
 <head>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
-    <script src="furious-four.js"></script>
-    <link rel="stylesheet" href="furious-four.css">
+    <link rel="stylesheet" href="css/furious-four.css">
 </head>
 <body>
 
-<div ng-controller="FuriousFourController" class="container">
+<div ng-controller="FuriousFourController as vm" class="container">
     <h1>The Furious Four</h1>
-    <img src="furious-four.png" id="the-furious-four">
+    <img src="img/furious-four.png" id="the-furious-four">
     <label for="quality">
-        <input id="quality" type="range" min="1" orient="vertical" max="4" ng-model="values.quality">
+        <input id="quality" type="range" min="1" orient="vertical" max="4" ng-model="vm.values.quality">
     </label>
     <label for="scope">
-        <input id="scope" type="range" min="1" orient="vertical" max="4" ng-model="values.scope">
+        <input id="scope" type="range" min="1" orient="vertical" max="4" ng-model="vm.values.scope">
     </label>
     <label for="time">
-        <input id="time" type="range" min="1" orient="vertical" max="4" ng-model="values.time">
+        <input id="time" type="range" min="1" orient="vertical" max="4" ng-model="vm.values.time">
     </label>
     <label for="budget">
-        <input id="budget" type="range" min="1" orient="vertical" max="4" ng-model="values.budget" class="no-right">
+        <input id="budget" type="range" min="1" orient="vertical" max="4" ng-model="vm.values.budget" class="no-right">
     </label>
 </div>
+<script src="node_modules/angular/angular.min.js"></script>
+<script src="js/furious-four.js"></script>
 </body>
 </html>

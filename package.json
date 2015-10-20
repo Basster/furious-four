@@ -1,0 +1,33 @@
+{
+  "name": "furious-four",
+  "version": "1.0.0",
+  "description": "The furious four are a simple tool to show customers the trade-offs to make on an agile project.",
+  "main": "index.html",
+  "scripts": {
+    "test": "karma start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Basster/furious-four.git"
+  },
+  "keywords": [
+    "agile"
+  ],
+  "author": "Ole Rößner",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Basster/furious-four/issues"
+  },
+  "homepage": "https://github.com/Basster/furious-four",
+  "devDependencies": {
+    "angular-mocks": "^1.4.7",
+    "jasmine-core": "^2.3.4",
+    "karma": "^0.13.11",
+    "karma-jasmine": "^0.3.6",
+    "karma-phantomjs-launcher": "^0.2.1",
+    "phantomjs": "^1.9.18"
+  },
+  "dependencies": {
+    "angular": "^1.4.7"
+  }
+}
