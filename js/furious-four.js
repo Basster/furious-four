@@ -1,18 +1,11 @@
 (function () {
     "use strict";
 
-    var module = angular.module('ffApp', []);
-
-    module.controller('FuriousFourController', ['$scope', function ($scope) {
-
-        var vm = this;
-        var inWatch = false;
-
-        vm.values = {
-            quality: "4",
-            scope: "3",
-            time: "2",
-            budget: "1"
+        $scope.values = {
+            time: "4",
+            budget: "3",
+            quality: "2",
+            scope: "1"
         };
 
         var watcher = function (newVal, oldVal) {
