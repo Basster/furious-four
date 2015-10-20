@@ -4,7 +4,7 @@
   "description": "The furious four are a simple tool to show customers the trade-offs to make on an agile project.",
   "main": "index.html",
   "scripts": {
-    "test": "karma start"
+    "test": "./node_modules/.bin/karma start --single-run --browsers PhantomJS"
   },
   "repository": {
     "type": "git",
