@@ -1,46 +1,51 @@
 (function () {
     "use strict";
+    angular.module('ffApp', [])
+        .controller('FuriousFourController', ['$scope', function ($scope) {
 
-        $scope.values = {
-            time: "4",
-            budget: "3",
-            quality: "2",
-            scope: "1"
-        };
+            var vm = this;
+            var inWatch = false;
 
-        var watcher = function (newVal, oldVal) {
-            var changedProperty, replaceProperty = null;
+            vm.values = {
+                time: "4",
+                budget: "3",
+                quality: "2",
+                scope: "1"
+            };
 
-            for (var prop in oldVal) {
-                if (oldVal.hasOwnProperty(prop) && oldVal[prop] !== newVal[prop]) {
-                    changedProperty = prop;
-                    break;
+            var watcher = function (newVal, oldVal) {
+                var changedProperty, replaceProperty = null;
+
+                for (var prop in oldVal) {
+                    if (oldVal.hasOwnProperty(prop) && oldVal[prop] !== newVal[prop]) {
+                        changedProperty = prop;
+                        break;
+                    }
                 }
-            }
 
-            var oldNum = oldVal[changedProperty];
-            var newNum = newVal[changedProperty];
+                var oldNum = oldVal[changedProperty];
+                var newNum = newVal[changedProperty];
 
-            for (var p in oldVal) {
-                if (oldVal.hasOwnProperty(p) && oldVal[p] === newNum) {
-                    replaceProperty = p;
-                    break;
+                for (var p in oldVal) {
+                    if (oldVal.hasOwnProperty(p) && oldVal[p] === newNum) {
+                        replaceProperty = p;
+                        break;
+                    }
                 }
-            }
 
-            if (changedProperty && inWatch === false) {
-                inWatch = true;
-                vm.values[replaceProperty] = oldNum;
-            }
-            else {
-                inWatch = false;
-            }
-        };
+                if (changedProperty && inWatch === false) {
+                    inWatch = true;
+                    vm.values[replaceProperty] = oldNum;
+                }
+                else {
+                    inWatch = false;
+                }
+            };
 
-        var watchValues = function () {
-            return vm.values;
-        };
+            var watchValues = function () {
+                return vm.values;
+            };
 
-        $scope.$watch(watchValues, watcher, true);
-    }]);
+            $scope.$watch(watchValues, watcher, true);
+        }]);
 })();

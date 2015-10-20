@@ -13,34 +13,39 @@ describe('Furious Four', function () {
             $scope.$apply();
         }));
 
+        /**
+         * Checks all scope values.
+         *
+         * @param time
+         * @param budget
+         * @param quality
+         * @param scope
+         */
+        function assertValues(time, budget, quality, scope) {
+            $scope.$digest();
+
+            expect($controller.values.time).toEqual(time);
+            expect($controller.values.budget).toEqual(budget);
+            expect($controller.values.quality).toEqual(quality);
+            expect($controller.values.scope).toEqual(scope);
+        }
+
         it('should set the default values', function () {
-            expect($controller.values.quality).toEqual('4');
-            expect($controller.values.scope).toEqual('3');
-            expect($controller.values.time).toEqual('2');
-            expect($controller.values.budget).toEqual('1');
+            assertValues('4', '3', '2', '1');
         });
 
         it('should switch the values of two properties', function () {
-            $controller.values.quality = '3';
-            $scope.$digest();
-            // quality: 3, scope: 4, time: 2, budget: 1
-            expect($controller.values.quality).toEqual('3');
-            expect($controller.values.scope).toEqual('4');
-
-            $controller.values.budget = '3';
-            $scope.$digest();
-            // quality: 1, scope: 4, time: 2, budget: 3
-            expect($controller.values.quality).toEqual('1');
-
             $controller.values.time = '3';
-            $scope.$digest();
-            // quality: 1, scope: 4, time: 3, budget: 2
-            expect($controller.values.budget).toEqual('2');
+            assertValues('3', '4', '2', '1');
 
             $controller.values.scope = '3';
-            $scope.$digest();
-            // quality: 1, scope: 3, time: 4, budget: 2
-            expect($controller.values.time).toEqual('4');
+            assertValues('1', '4', '2', '3');
+
+            $controller.values.budget = '2';
+            assertValues('1', '2', '4', '3');
+
+            $controller.values.quality = '1';
+            assertValues('4', '2', '1', '3');
         })
     });
 });
