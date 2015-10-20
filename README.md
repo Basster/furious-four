@@ -1,5 +1,7 @@
 # furious-four
 
+[![Build Status](https://travis-ci.org/Basster/furious-four.svg?branch=master)](https://travis-ci.org/Basster/furious-four)
+
 The furious four are a simple tool to show customers the trade-offs to make on an agile project.
 
 Taken from:
