@@ -2,6 +2,7 @@
 
 body {
     font-family: 'Open Sans', sans-serif;
+    background-color: #dddddd;
 }
 
 h1 {
@@ -10,10 +11,11 @@ h1 {
 
 .container {
     width: 665px;
-    margin: 0 auto;
+    margin: 2em auto;
     -webkit-box-shadow: 5px 5px 10px 0 #9C9C9C;
     box-shadow: 5px 5px 10px 0 #9C9C9C;
     padding: 10px;
+    background-color: #ffffff;
 }
 
 input[type=range][orient=vertical] {

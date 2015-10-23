@@ -1,5 +1,5 @@
 describe('Furious Four', function () {
-    beforeEach(module('ffApp'));
+    beforeEach(module('furious-four'));
 
     describe('FuriousFourController', function () {
 
